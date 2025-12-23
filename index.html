@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Скачать приложение 1xBet</title>
+  <style>
+    :root{
+      --bg:#050816;
+      --card:#0b122a;
+      --text:#eef2ff;
+      --muted:#a7b0c0;
+      --accent:#facc15;
+      --accent2:#22c55e;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 50% 20%, rgba(250,204,21,.20), transparent 60%),
+        radial-gradient(700px 400px at 70% 80%, rgba(34,197,94,.16), transparent 60%),
+        var(--bg);
+      padding:24px;
+    }
+    .wrap{
+      width:min(720px, 100%);
+      text-align:center;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:28px 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    h1{margin:0 0 8px; font-size:26px; letter-spacing:.2px}
+    p{margin:0; color:var(--muted); line-height:1.5}
+    .btn{
+      margin-top:18px;
+      width:100%;
+      border:0;
+      cursor:pointer;
+      padding:14px 16px;
+      border-radius:14px;
+      font-size:16px;
+      font-weight:700;
+      color:#0b122a;
+      background: linear-gradient(180deg, #fde047, #facc15);
+      box-shadow: 0 10px 30px rgba(250,204,21,.22);
+      transition: transform .08s ease, filter .15s ease;
+    }
+    .btn:active{transform: translateY(1px); filter: brightness(.98)}
+    .note{
+      margin-top:12px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* Modal */
+    .overlay{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      z-index:999;
+    }
+    .overlay.open{display:flex;}
+    .modal{
+      width:min(560px, 100%);
+      background: #0b122a;
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      padding:18px;
+      text-align:left;
+    }
+    .modal-header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--border);
+    }
+    .modal-title{
+      margin:0;
+      font-size:16px;
+      font-weight:800;
+    }
+    .x{
+      border:1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      width:36px; height:36px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:18px;
+      line-height:1;
+    }
+    .steps{margin:14px 0 0; padding-left:18px; color:var(--text)}
+    .steps li{margin:10px 0; color:var(--text)}
+    .steps span{color:var(--muted)}
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .a-btn{
+      flex:1 1 180px;
+      border-radius:12px;
+      padding:12px 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      cursor:pointer;
+      font-weight:700;
+    }
+    .a-btn.primary{
+      border:0;
+      background: linear-gradient(180deg, rgba(34,197,94,1), rgba(22,163,74,1));
+      color:#06210f;
+    }
+    .small{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>Приложение 1xBet</h1>
+      <p>Нажми кнопку ниже, чтобы открыть инструкции и перейти к загрузке приложения.</p>
+
+      <button class="btn" id="openModalBtn">Скачать приложение 1xBet</button>
+
+      <div class="note">Рекомендуется скачивать только с официальных источников.</div>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Инструкция">
+      <div class="modal-header">
+        <h2 class="modal-title">Что нужно сделать</h2>
+        <button class="x" id="closeModalBtn" aria-label="Закрыть">×</button>
+      </div>
+
+      <ol class="steps">
+        <li><b>Зарегистрируйся</b> на сайте 1x (официальная регистрация). <span>Это нужно, чтобы привязать доступ к аккаунту.</span></li>
+        <li><b>Скачай приложение</b> на телефон и установи его. <span>Используй официальный источник.</span></li>
+        <li><b>После выполнения шагов</b> ты получишь доступ к материалам/инструкции/аналитике. <span>Без обещаний и гарантий результата.</span></li>
+      </ol>
+
+      <div class="actions">
+        <button class="a-btn" id="goSiteBtn">Перейти на сайт</button>
+        <button class="a-btn primary" id="downloadBtn">Перейти к скачиванию</button>
+      </div>
+
+      <div class="small">
+        Если кнопка скачивания не открывается — проверь VPN/браузер и попробуй другой источник (только официальный).
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ВСТАВЬ СВОИ ССЫЛКИ:
+    const OFFICIAL_SITE_URL = "https://example.com";      // <-- сайт регистрации
+    const APP_DOWNLOAD_URL  = "https://example.com/app";  // <-- ссылка на приложение (официальная)
+
+    const overlay = document.getElementById("overlay");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const goSiteBtn = document.getElementById("goSiteBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    function openModal(){
+      overlay.classList.add("open");
+      overlay.setAttribute("aria-hidden", "false");
+    }
+    function closeModal(){
+      overlay.classList.remove("open");
+      overlay.setAttribute("aria-hidden", "true");
+    }
+
+    openModalBtn.addEventListener("click", openModal);
+    closeModalBtn.addEventListener("click", closeModal);
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    goSiteBtn.addEventListener("click", () => window.open(OFFICIAL_SITE_URL, "_blank", "noopener,noreferrer"));
+    downloadBtn.addEventListener("click", () => window.open(APP_DOWNLOAD_URL, "_blank", "noopener,noreferrer"));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+</body>
+</html>
